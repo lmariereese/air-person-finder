@@ -35,17 +35,15 @@ const PersonFinder = () => {
         return false;
       });
     }
-
-    if (search !== "") {
-      const results = searchData(search);
-      if (search !== "" && results.length === 0) {
-        dispatch({type: "NO_RESULTS"})
-      } else {
-        dispatch({type: "DISPLAY_RESULTS", payload: results})
-      }
+    const results = searchData(search);
+    if (search !== "" && results.length === 0) {
+      dispatch({type: "NO_RESULTS"})
+    } else {
+      dispatch({type: "DISPLAY_RESULTS", payload: results})
     }
   }, [search])
 
+  console.log(state.data)
   return (
     <>
       <div className="form-wrapper">
