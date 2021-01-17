@@ -1,12 +1,10 @@
 import React, {useState, useEffect, useReducer} from 'react';
 import {PersonCard} from './';
 import {mockData} from '../mockData';
+import searchData from '../utils/searchData';
 
 const personReducer = (state, action) => {
   switch (action.type) {
-    case "DISPLAY_ALL": {
-      return {...state, noResults: false, data: action.payload}
-    }
     case "DISPLAY_RESULTS": {
       return {...state, noResults: false, data: action.payload}
     }
@@ -21,20 +19,10 @@ const PersonFinder = () => {
   const [search, setSearch] = useState("");
   const [state, dispatch] = useReducer(personReducer, {
     noResults: false,
-    isLoading: false,
     data: mockData
   })
 
   useEffect(() => {
-    const searchData = (searchTerm) => {
-      if (searchTerm === "") return mockData;
-      const lowerCaseSearchTerm = searchTerm.toLowerCase();
-      return mockData.filter((person) => {
-        if (person.name.toLowerCase() === lowerCaseSearchTerm) return true;
-        if (person.name.toLowerCase().includes(lowerCaseSearchTerm)) return true;
-        return false;
-      });
-    }
     const results = searchData(search);
     if (search !== "" && results.length === 0) {
       dispatch({type: "NO_RESULTS"})
@@ -43,7 +31,6 @@ const PersonFinder = () => {
     }
   }, [search])
 
-  console.log(state.data)
   return (
     <>
       <div className="form-wrapper">
@@ -59,7 +46,6 @@ const PersonFinder = () => {
         </form>
       </div>
       <div className="list-wrapper">
-        {state.isLoading && <div>Loading...</div>}
         {state.noResults ? (
           <div>
             <p>No results. Please try another name.</p>
