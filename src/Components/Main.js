@@ -1,5 +1,5 @@
 import React from 'react';
-import {PersonFinder, PersonList} from './';
+import {PersonFinder} from './';
 
 const Main = () => {
   return (

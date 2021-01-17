@@ -30,11 +30,7 @@ const PersonFinder = () => {
     const searchData = (searchTerm) => {
       // only exact matches, no partial matches yet
       if (searchTerm === "all") return mockData;
-      return mockData.filter((person) => {
-        if (person.name === searchTerm) {
-          return person;
-        }
-      });
+      return mockData.filter((person) => person.name === searchTerm);
     }
     if (search !== "all") {
       const results = searchData(search);
