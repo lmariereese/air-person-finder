@@ -1,10 +1,11 @@
 import React from 'react';
 import {Switch, Route, withRouter} from 'react-router-dom';
+import {Main} from './Components'
 
 const Routes = () => {
   return (
     <Switch>
-      <Route path="/"></Route>
+      <Route path="/" component={Main}></Route>
     </Switch>
   )
 }
