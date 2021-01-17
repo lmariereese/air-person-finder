@@ -18,23 +18,27 @@ const personReducer = (state, action) => {
 }
 
 const PersonFinder = () => {
-  const [query, setQuery] = useState("");
-  const [search, setSearch] = useState("all");
+  const [search, setSearch] = useState("");
   const [state, dispatch] = useReducer(personReducer, {
     noResults: false,
+    isLoading: false,
     data: mockData
   })
 
-
   useEffect(() => {
     const searchData = (searchTerm) => {
-      // only exact matches, no partial matches yet
-      if (searchTerm === "all") return mockData;
-      return mockData.filter((person) => person.name.toLowerCase() === searchTerm.toLowerCase());
+      if (searchTerm === "") return mockData;
+      const lowerCaseSearchTerm = searchTerm.toLowerCase();
+      return mockData.filter((person) => {
+        if (person.name.toLowerCase() === lowerCaseSearchTerm) return true;
+        if (person.name.toLowerCase().includes(lowerCaseSearchTerm)) return true;
+        return false;
+      });
     }
-    if (search !== "all") {
+
+    if (search !== "") {
       const results = searchData(search);
-      if (search !== "all" && results.length === 0) {
+      if (search !== "" && results.length === 0) {
         dispatch({type: "NO_RESULTS"})
       } else {
         dispatch({type: "DISPLAY_RESULTS", payload: results})
@@ -45,17 +49,14 @@ const PersonFinder = () => {
   return (
     <>
       <div className="form-wrapper">
-        <form onSubmit={(event) => {
-          setSearch(query)
-          event.preventDefault()
-          }}>
+        <form>
           <label name="search"></label>
           <input
             type="text"
             name="search"
             placeholder="Type a name..."
-            value={query}
-            onChange={event => setQuery(event.target.value)}
+            value={search}
+            onChange={event => setSearch(event.target.value)}
           ></input>
         </form>
       </div>
