@@ -43,25 +43,60 @@ p {
 }
 
 .main-content-wrapper {
+  margin: 05px auto;
+}
+
+.main-content {
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-grow: 1;
+  width: 100%;
+  margin: .5rem 0;
+}
+
+.form-wrapper > form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 20px;
+  background-color: #EFEFEF;
+  border: none;
+  padding: .5rem;
 }
 
 /* Smartphones (portrait and landscape) */
 
 
 @media all and (min-width: 481px) {
-
+  .main-content {
+    max-width: 400px;
+    padding: 20px;
+  }
 }
 
 @media all and (min-width: 769px) {
-
+  .main-content {
+    max-width: 575px;
+  }
+  .main-content > div {
+    text-align: left;
+  }
 }
 
 @media all and (min-width: 1025px) {
   .main-content {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     max-width: 575px;
   }
 }
