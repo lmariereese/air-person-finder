@@ -27,7 +27,6 @@ h1 {
 p {
   font-family: 'Helvetica', 'Arial', sans-serif;
   color: #333333;
-  /* line-height: 1.5px; */
 }
 
 
@@ -44,6 +43,7 @@ p {
   margin: 1rem 0 0 1rem;
 }
 
+/* Page Content layout*/
 .main-content-wrapper {
   margin: 05px 10px;
 }
@@ -63,11 +63,16 @@ p {
 
 .page-title-div {
   margin-top: 1rem;
-  text-align: left;
+  text-align: center;
+}
+
+.page-title-div > h1 {
+  font-size: 24px;
 }
 
 .page-title-div > p {
   line-height: 1.5;
+  font-size: 12px;
 }
 
 /* Input search styles*/
@@ -76,11 +81,6 @@ p {
   flex-grow: 1;
   width: 100%;
   margin: .5rem 0;
-}
-
-.form-wrapper > form {
-  width: 100%;
-  flex-grow: 1;
 }
 
 input {
@@ -161,12 +161,42 @@ input {
     margin: 1rem 5%;
   }
 
+  .page-title-div > h1 {
+    line-height: 1.1;
+    font-size: 40px;
+  }
+
+  .page-title-div > p {
+    line-height: 1.5;
+    font-size: 16px;
+  }
+
   .main-content {
     max-width: 575px;
   }
 
   .main-content > div {
     text-align: left;
+  }
+
+  .form-wrapper {
+    display: flex;
+    flex-grow: 1;
+    width: 100%;
+    margin: .5rem 0;
+  }
+
+  .form-wrapper > form {
+    margin: .5rem 0;
+  }
+
+  input {
+    width: 100%;
+    height: 20px;
+    background-color: #EFEFEF;
+    border: none;
+    border-radius: 2px;
+    padding: .5rem;
   }
 
   /* Individual Person Card Styles */
