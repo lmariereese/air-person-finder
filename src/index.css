@@ -76,6 +76,24 @@ input {
   padding: .5rem;
 }
 
+.list-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.person-card {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.person-info {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 /* Smartphones (portrait and landscape) */
 
 
