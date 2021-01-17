@@ -20,6 +20,8 @@ code {
 
 h1 {
   color: #102261;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-weight: lighter;
 }
 
 p {
@@ -53,11 +55,22 @@ p {
   flex-direction: column;
 }
 
+/* Page Title Styles */
 .main-content > div {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
 }
 
+.page-title-div {
+  margin-top: 1rem;
+}
+
+.page-title-div > p {
+  line-height: 1.5;
+}
+
+/* Input search styles*/
 .form-wrapper {
   display: flex;
   flex-grow: 1;
@@ -67,6 +80,7 @@ p {
 
 .form-wrapper > form {
   width: 100%;
+  flex-grow: 1;
 }
 
 input {
@@ -124,6 +138,7 @@ input {
 
 .person-info p {
   color: #666666;
+  font-size: 14px;
 }
 
 /* Smartphones (portrait and landscape) */
@@ -161,6 +176,8 @@ input {
 
   .person-avatar {
     display: flex;
+    max-width: 96px;
+    max-height: 96px;
     flex-grow: 1;
   }
 
@@ -174,7 +191,7 @@ input {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex-grow: 2;
+    flex-grow: 3;
     text-align: left;
     margin-top: 0;
     padding-left: 1rem;

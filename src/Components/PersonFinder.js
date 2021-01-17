@@ -43,7 +43,7 @@ const PersonFinder = () => {
   }, [search])
 
   return (
-    <div>
+    <>
       <div className="form-wrapper">
         <form onSubmit={(event) => {
           setSearch(query)
@@ -76,7 +76,7 @@ const PersonFinder = () => {
         )
       }
         </div>
-    </div>
+    </>
   )
 }
 
