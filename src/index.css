@@ -23,7 +23,7 @@ h1 {
 
 p {
   font-family: 'Helvetica', 'Arial', sans-serif;
-  color: 333333;
+  color: #333333;
   /* line-height: 1.5px; */
 }
 
@@ -43,7 +43,7 @@ p {
 }
 
 .main-content-wrapper {
-  margin: 05px auto;
+  margin: 05px 10px;
 }
 
 .main-content {
@@ -80,12 +80,17 @@ input {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin: 1rem 0;
 }
 
 .person-card {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  margin: 1rem auto;
+  text-align: center;
 }
 
 .person-avatar {
@@ -93,32 +98,87 @@ input {
   flex-grow: 1;
 }
 
+.person-avatar img {
+  max-width: 100%;
+  max-height: 100%;
+  background-color: #C4C4C4;
+}
+
 .person-info {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   flex-grow: 2;
+  text-align: left;
+  margin-top: 1rem;
+  padding-left: 1rem;
+}
+
+.person-info h3 {
+  color: #333333;
+  margin: 0;
+}
+
+.person-info p {
+  color: #666666;
 }
 
 /* Smartphones (portrait and landscape) */
 
 
 @media all and (min-width: 481px) {
+  .main-content-wrapper {
+    margin: 05px auto;
+  }
+
   .main-content {
     max-width: 400px;
-    padding: 20px;
+    margin: 1rem auto;
   }
 }
 
+/* Tablets  */
 @media all and (min-width: 769px) {
   .main-content {
     max-width: 575px;
   }
+
   .main-content > div {
     text-align: left;
   }
+
+  /* Individual Person Card Styles */
+  .person-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .person-avatar {
+    display: flex;
+    flex-grow: 1;
+  }
+
+  .person-avatar img {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #C4C4C4;
+  }
+
+  .person-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    text-align: left;
+    padding-left: 1rem;
+  }
 }
 
+/* Small screens */
 @media all and (min-width: 1025px) {
   .main-content {
     max-width: 575px;

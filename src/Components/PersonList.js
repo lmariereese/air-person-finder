@@ -8,7 +8,7 @@ const PersonList = () => {
       {/* move stuff below to its own component*/}
       <div className="person-card">
         <div className="person-avatar">
-          <image src={mockData[0].avatar}></image>
+          <img src={mockData[0].avatar} alt={`Avatar for ${mockData[0].name}`}></img>
         </div>
         <div className="person-info">
           <h3>{mockData[0].name}</h3>
