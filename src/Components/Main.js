@@ -1,5 +1,5 @@
 import React from 'react';
-import {PersonFinder} from './';
+import {PersonFinder, PersonList} from './';
 
 const Main = () => {
   return (
@@ -10,6 +10,7 @@ const Main = () => {
           <p>If you just can't find someone and need to know what they look like, you've come to the right place! Just type the name of the person you are looking for below into the search box!</p>
         </div>
         <PersonFinder />
+        <PersonList />
       </div>
     </div>
   )

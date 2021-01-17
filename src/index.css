@@ -88,10 +88,16 @@ input {
   width: 100%;
 }
 
+.person-avatar {
+  display: flex;
+  flex-grow: 1;
+}
+
 .person-info {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  flex-grow: 2;
 }
 
 /* Smartphones (portrait and landscape) */

@@ -7,12 +7,12 @@ const PersonList = () => {
     <div className="list-wrapper">
       {/* move stuff below to its own component*/}
       <div className="person-card">
-        <div>
-          <image src=""></image>
+        <div className="person-avatar">
+          <image src={mockData[0].avatar}></image>
         </div>
         <div className="person-info">
-          <h3>Name</h3>
-          <p>Description</p>
+          <h3>{mockData[0].name}</h3>
+          <p>{mockData[0].description}</p>
         </div>
       </div>
     </div>
